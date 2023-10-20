@@ -19,6 +19,9 @@
 # Inherit from those products. Most specific first.
 $(call inherit-product, $(SRC_TARGET_DIR)/product/base.mk)
 
+# Device specific configs.
+$(call inherit-product, device/vivo/2110/device.mk)
+
 # Inherit from our custom product configuration
 $(call inherit-product, vendor/twrp/config/common.mk)
 
@@ -33,9 +36,7 @@ PRODUCT_SHIPPING_API_LEVEL := 30
 # Dynamic
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
 
-# fastbootd
-PRODUCT_PACKAGES += \
-    android.hardware.fastboot@1.0-impl-mock
+
 
 # Bypass anti-rollback ROMs protection
 # Set build date to Jan 1 2009 00:00:00
